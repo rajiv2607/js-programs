@@ -1,3 +1,7 @@
+/*
+*  Linked list implimentation - add element , find middle element , reverse the ll and delete element at index
+*/
+
 class Node{
     constructor(data) {
         this.data = data,
@@ -28,6 +32,19 @@ class LinkedList{
         }
     }
     
+
+    findMiddle() {
+        let fast  = this.head
+        let slow = this.head
+        
+        while(fast.next) {
+            fast = fast.next.next
+            slow = slow.next
+        }
+        
+        
+        return slow.data
+    }
     
     delete(index) {
         let count = 0;
@@ -68,3 +85,4 @@ ll.add(4)
 ll.add(5)
 ll.delete(2)
 console.log(ll)
+console.log(ll.findMiddle())
